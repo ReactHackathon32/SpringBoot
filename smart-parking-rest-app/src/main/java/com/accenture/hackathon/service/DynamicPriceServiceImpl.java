@@ -1,5 +1,5 @@
 package com.accenture.hackathon.service;
 
-public class DynamicPriceServiceImpl {
+public class DynamicPriceServiceImpl implements DynamicPriceService {
 
 }
