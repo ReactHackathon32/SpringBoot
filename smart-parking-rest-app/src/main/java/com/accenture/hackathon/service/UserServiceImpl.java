@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.accenture.hackathon.entity.User;
+import com.accenture.hackathon.model.UserRegistrationModel;
 import com.accenture.hackathon.repository.UserRepository;
 
 @Service
@@ -22,5 +23,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User fetchUserbyId(UUID userId) {
 		return userRepo.findById(userId).get();
+	}
+
+	@Override
+	public User registerUser(UserRegistrationModel userInfo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

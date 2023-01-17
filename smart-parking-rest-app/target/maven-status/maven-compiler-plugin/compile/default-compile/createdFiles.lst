@@ -1,4 +1,4 @@
-com\accenture\hackathon\entity\Carpark$CarparkBuilder.class
 com\accenture\hackathon\entity\User$UserBuilder.class
-com\accenture\hackathon\entity\OngoingParkingEvent$OngoingParkingEventBuilder.class
 com\accenture\hackathon\entity\CompletedParkingEvent$CompletedParkingEventBuilder.class
+com\accenture\hackathon\entity\Carpark$CarparkBuilder.class
+com\accenture\hackathon\entity\OngoingParkingEvent$OngoingParkingEventBuilder.class

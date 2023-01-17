@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.accenture.hackathon.SmartParkingRestAppApplicationTests
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.434 s - in com.accenture.hackathon.SmartParkingRestAppApplicationTests
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.967 s - in com.accenture.hackathon.SmartParkingRestAppApplicationTests
->>>>>>> d8f41ff74524125571783ece1426a8ed62319bee
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.022 s - in com.accenture.hackathon.SmartParkingRestAppApplicationTests

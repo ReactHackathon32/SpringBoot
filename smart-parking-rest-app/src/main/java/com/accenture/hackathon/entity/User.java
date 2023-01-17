@@ -2,6 +2,9 @@ package com.accenture.hackathon.entity;
 
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -50,7 +53,8 @@ public class User {
 	
 	private String email;
 	
-	@Column(name="password")
+	@JsonProperty(access = Access.WRITE_ONLY)
+	@Column(name="password", length=60)
 	private String password;
 	
 	@Column(name="first_name")
