@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\User.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\Carpark.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\CompletedParkingEvent.java
@@ -12,3 +13,14 @@ C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\ParkingServiceImpl.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\CarparkRepository.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\CarparkServiceImpl.java
+=======
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\CompletedParkingEvent.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\OngoingParkingEvent.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\CompletedParkingRepository.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\UserRepository.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\User.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\SmartParkingRestAppApplication.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\Carpark.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\CarparkRepository.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\OngoingParkingRepository.java
+>>>>>>> d8f41ff74524125571783ece1426a8ed62319bee
