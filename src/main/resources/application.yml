@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    active: prod
   datasource:
     driver-class-name: org.postgresql.Driver
   jpa:
@@ -10,21 +8,6 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: 'true'
-
----
-
-spring:
-  profiles: dev
-  datasource:
-    username: uevjeixl
-    url: jdbc:postgresql://topsy.db.elephantsql.com:5432/uevjeixl
-    password: MnoistEkQexL8kIQ4YPcP4xmJ7tCG2H_
-
----
-
-spring:
-  profiles: prod
-  datasource:
     username: ${PROD_DB_USERNAME}
     url: jdbc:postgresql://${PROD_DB_HOST}:${PROD_DB_PORT}/${PROD_DB_NAME}
     password: ${PROD_DB_PASSWORD}
