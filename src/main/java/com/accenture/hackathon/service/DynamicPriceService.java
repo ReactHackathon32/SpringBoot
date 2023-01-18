@@ -1,5 +1,6 @@
 package com.accenture.hackathon.service;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 
 import com.accenture.hackathon.model.CarPark_Data;
@@ -19,4 +20,8 @@ public  ArrayList<CarPark_Data>  getDataFromAvailableLotsAPI() throws JsonMappin
  
 
 
+=======
+public interface DynamicPriceService {
+
+>>>>>>> 99b65180517c4b1d1044fd66bf2bd26161f51b55
 }

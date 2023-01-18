@@ -1,5 +1,6 @@
 package com.accenture.hackathon.service;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -121,3 +122,8 @@ try {
 //System.out.println(cp.getAvailableLots());
 //
 //}
+=======
+public class DynamicPriceServiceImpl {
+
+}
+>>>>>>> 99b65180517c4b1d1044fd66bf2bd26161f51b55

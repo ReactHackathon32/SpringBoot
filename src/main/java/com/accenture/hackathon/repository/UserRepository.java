@@ -10,4 +10,8 @@ import com.accenture.hackathon.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, UUID>{
 
+	User findByEmail(String email);
+	
+	
+
 }
