@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\DynamicPriceServiceImpl.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\UserService.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\UserServiceImpl.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\OngoingParkingEvent.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\ParkingService.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\UserRepository.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\User.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\model\UserRegistrationModel.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\controller\ParkingController.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\controller\CarparkController.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\Carpark.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\CarparkServiceImpl.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\OngoingParkingRepository.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\DynamicPriceService.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\CompletedParkingEvent.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\ParkingServiceImpl.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\CompletedParkingRepository.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\controller\UserController.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\CarparkService.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\SmartParkingRestAppApplication.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\WebSecurityConfig.java
+C:\Users\yixun\Documents\GitHub\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\CarparkRepository.java
+=======
 C:\Users\zawad\Git\SpringBoot\src\main\java\com\accenture\hackathon\entity\OngoingParkingEvent.java
 C:\Users\zawad\Git\SpringBoot\src\main\java\com\accenture\hackathon\entity\Carpark.java
 C:\Users\zawad\Git\SpringBoot\src\main\java\com\accenture\hackathon\repository\CarparkRepository.java
@@ -21,3 +45,4 @@ C:\Users\zawad\Git\SpringBoot\src\main\java\com\accenture\hackathon\WebSecurityC
 C:\Users\zawad\Git\SpringBoot\src\main\java\com\accenture\hackathon\entity\User.java
 C:\Users\zawad\Git\SpringBoot\src\main\java\com\accenture\hackathon\repository\UserRepository.java
 C:\Users\zawad\Git\SpringBoot\src\main\java\com\accenture\hackathon\repository\CompletedParkingRepository.java
+>>>>>>> 99b65180517c4b1d1044fd66bf2bd26161f51b55
