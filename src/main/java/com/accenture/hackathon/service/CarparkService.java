@@ -10,5 +10,7 @@ public interface CarparkService {
 	Carpark fetchCarparkbyId(UUID carparkId);
 
 	Carpark saveCarpark(Carpark carpark);
+	
+	Carpark fetchCarparkbyName(String name);
 
 }
