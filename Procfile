@@ -1,3 +1,0 @@
--Dspring.datasource.url=jdbc:postgresql://topsy.db.elephantsql.com:5432/uevjeixl
--Dspring.datasource.username=uevjeixl
--Dspring.datasource.password=MnoistEkQexL8kIQ4YPcP4xmJ7tCG2H_
