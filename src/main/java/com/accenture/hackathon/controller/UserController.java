@@ -31,7 +31,6 @@ public class UserController {
 			return "success";
 		}
 		return "failure";
-		
 	}
 	
 	
