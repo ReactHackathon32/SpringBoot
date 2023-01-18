@@ -4,7 +4,6 @@ import java.util.UUID;
 
 
 import com.accenture.hackathon.entity.Carpark;
-import com.accenture.hackathon.entity.User;
 
 public interface CarparkService {
 
