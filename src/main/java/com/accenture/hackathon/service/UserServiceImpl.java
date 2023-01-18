@@ -3,7 +3,7 @@ package com.accenture.hackathon.service;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.accenture.hackathon.entity.User;
@@ -16,8 +16,8 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserRepository userRepo;
 	
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+//	@Autowired
+//	private PasswordEncoder passwordEncoder;
 
 	@Override
 	public User fetchUserbyId(UUID userId) {
@@ -31,7 +31,8 @@ public class UserServiceImpl implements UserService{
 				.email(userDetail.getEmail())
 				.firstName(userDetail.getFirstName())
 				.lastName(userDetail.getLastName())
-				.password(passwordEncoder.encode(userDetail.getPassword()))
+//				.password(passwordEncoder.encode(userDetail.getPassword()))
+				.password(userDetail.getPassword())
 				.enabled(false)
 				.build();
 		
@@ -41,7 +42,8 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public boolean verifyLogin(String email, String rawPassword) {
 		User user = userRepo.findByEmail(email);
-		return passwordEncoder.matches(rawPassword, user.getPassword());
+//		return passwordEncoder.matches(rawPassword, user.getPassword());
+		return rawPassword.equals(user.getPassword());
 	}
 
 
