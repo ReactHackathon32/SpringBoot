@@ -33,15 +33,6 @@ import lombok.NoArgsConstructor;
 public class User {
 	
 	@Id
-//	@SequenceGenerator(
-//			name = "user_sequence",
-//			sequenceName = "user_sequence",
-//			allocationSize = 10
-//	)
-//	@GeneratedValue(
-//			strategy = GenerationType.SEQUENCE,
-//			generator = "user_sequence"
-//	)
 	@GeneratedValue(strategy= GenerationType.UUID)
 	@Column(name="user_id")
 	private UUID userId;
@@ -62,6 +53,9 @@ public class User {
 	
 	@Column(name="last_name")
 	private String lastName;
+	
+	@Column(name="enabled")
+	private Boolean enabled;
 	
 	@OneToOne(
 			mappedBy = "user"

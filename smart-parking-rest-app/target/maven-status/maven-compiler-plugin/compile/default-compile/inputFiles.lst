@@ -8,10 +8,12 @@ C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\CompletedParkingEvent.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\OngoingParkingRepository.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\entity\OngoingParkingEvent.java
+C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\model\UserRegistrationDTO.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\CarparkService.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\ParkingService.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\SmartParkingRestAppApplication.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\controller\ParkingController.java
+C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\model\UserLoginDTO.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\CompletedParkingRepository.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\repository\UserRepository.java
 C:\Users\zawad\Git\SpringBoot\smart-parking-rest-app\src\main\java\com\accenture\hackathon\service\ParkingServiceImpl.java

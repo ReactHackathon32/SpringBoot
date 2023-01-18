@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.accenture.hackathon.entity.User;
+import com.accenture.hackathon.model.UserLoginDTO;
+import com.accenture.hackathon.model.UserRegistrationDTO;
 import com.accenture.hackathon.service.UserService;
+
+import jakarta.validation.Valid;
 
 @RestController
 public class UserController {
@@ -15,14 +19,24 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@PostMapping("/user")
-	public User saveUser(@RequestBody User user) {
-		System.out.println("saveUser entered");
-		return userService.saveUser(user);
+	@PostMapping("/user/register")
+	public User registerUser(@RequestBody UserRegistrationDTO userDetail) {
+		System.out.println("entered method in controller");
+		return userService.registerUser(userDetail);
 	}
 	
-	@GetMapping("/")
+	@PostMapping("/user/login")
+	public String loginUser(@RequestBody @Valid UserLoginDTO loginDetails) {
+		if(userService.verifyLogin(loginDetails.getEmail(), loginDetails.getPassword())) {
+			return "success";
+		}
+		return "failure";
+		
+	}
+	
+	
+	@GetMapping("/hello")
 	public String helloWorld() {
-		return "hello World";
+		return "hello world";
 	}
 }
