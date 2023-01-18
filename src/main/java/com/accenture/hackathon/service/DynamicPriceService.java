@@ -15,7 +15,7 @@ public interface DynamicPriceService {
 	
 public void generateCarParks();
 
-
+public void updateDynamicPrice();
 
 public  ArrayList<CarPark_Data>  getDataFromAvailableLotsAPI() throws JsonMappingException, JsonProcessingException ;
  

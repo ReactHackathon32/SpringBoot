@@ -1,6 +1,7 @@
 package com.accenture.hackathon.model;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 public class CarPark_List {
