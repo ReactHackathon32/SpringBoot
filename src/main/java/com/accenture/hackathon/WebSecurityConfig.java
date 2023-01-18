@@ -1,20 +1,21 @@
-<<<<<<< HEAD
-package com.accenture.hackathon;
+//
+//package com.accenture.hackathon;
+//
+//import org.springframework.context.annotation.Bean;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
+//
+//@EnableWebSecurity
+//public class WebSecurityConfig {
+//	
+//	@Bean
+//	PasswordEncoder passwordEncoder() {
+//		return new BCryptPasswordEncoder(11);
+//	}
+//}
 
-@EnableWebSecurity
-public class WebSecurityConfig {
-	
-	@Bean
-	PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder(11);
-	}
-}
-=======
 //package com.accenture.hackathon;
 //
 //import org.springframework.context.annotation.Bean;
@@ -45,4 +46,4 @@ public class WebSecurityConfig {
 //        return http.build();
 //    }
 //}
->>>>>>> 99b65180517c4b1d1044fd66bf2bd26161f51b55
+

@@ -1,7 +1,8 @@
 package com.accenture.hackathon.service;
 
-<<<<<<< HEAD
+
 import java.util.ArrayList;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -10,7 +11,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.accenture.hackathon.entity.Carpark;
 import com.accenture.hackathon.model.CarPark_Data;
-import com.accenture.hackathon.model.CarPark_Info;
 import com.accenture.hackathon.model.OverallAvailableSlots;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -122,8 +122,5 @@ try {
 //System.out.println(cp.getAvailableLots());
 //
 //}
-=======
-public class DynamicPriceServiceImpl {
 
-}
->>>>>>> 99b65180517c4b1d1044fd66bf2bd26161f51b55
+
