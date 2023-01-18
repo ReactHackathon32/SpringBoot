@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.accenture.hackathon.entity.Carpark;
-import com.accenture.hackathon.entity.User;
 import com.accenture.hackathon.repository.CarparkRepository;
 
 @Service
@@ -24,6 +23,11 @@ public class CarparkServiceImpl implements CarparkService{
 	@Override
 	public Carpark saveCarpark(Carpark carpark) {
 		return carparkRepo.save(carpark);
+	}
+
+	@Override
+	public Carpark fetchCarparkbyName(String name) {
+		return carparkRepo.findByCarparkName(name);
 	}
 
 }

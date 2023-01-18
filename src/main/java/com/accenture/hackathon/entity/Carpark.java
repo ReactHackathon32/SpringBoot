@@ -2,9 +2,7 @@ package com.accenture.hackathon.entity;
 
 import java.util.UUID;
 
-
 import jakarta.persistence.Column;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -40,11 +38,4 @@ public class Carpark {
 	
 	@Column(name="available_lots")
 	private int availableLots;
-
-
-	
-
-	
-	
-	
 }
