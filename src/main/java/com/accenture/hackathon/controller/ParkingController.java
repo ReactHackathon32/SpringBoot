@@ -1,5 +1,6 @@
 package com.accenture.hackathon.controller;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
@@ -79,8 +80,9 @@ public class ParkingController {
 	public List<CompletedParkingEvent> getAllParking(@PathVariable("id") String userId, @RequestParam("token") String sessionToken) throws GenericDeviationException {
 		tokenService.validateSession(sessionToken, UUID.fromString(userId));
 		User user = userService.fetchUserById(UUID.fromString(userId));
-		
-		return parkingService.getAllParkingEvent(user);
+		List<CompletedParkingEvent> parkingHistory = parkingService.getAllParkingEvent(user);
+		Collections.sort(parkingHistory);
+		return parkingHistory;
 	}
 	
 	@GetMapping("/carpark")

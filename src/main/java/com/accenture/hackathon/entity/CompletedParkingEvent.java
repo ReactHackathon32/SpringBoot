@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Table(name="tbl_completed_parking")
-public class CompletedParkingEvent {
+public class CompletedParkingEvent implements Comparable<CompletedParkingEvent>{
 	
 	@Id
 	@Column(name="parking_id")
@@ -51,4 +51,9 @@ public class CompletedParkingEvent {
 	@Column(name="price",
 			nullable = false)
 	private float price;
+	
+	@Override
+	public int compareTo(CompletedParkingEvent parking) {
+		return parking.getEndTime().compareTo(endTime);
+	}
 }
