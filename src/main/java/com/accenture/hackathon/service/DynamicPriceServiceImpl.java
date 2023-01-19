@@ -1,5 +1,6 @@
 package com.accenture.hackathon.service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,7 @@ public class DynamicPriceServiceImpl implements DynamicPriceService {
 			Carpark cp = new Carpark();
 
 			cp.setCarparkName(carPark_DataList.get(i).getCarpark_number());
-			cp.setBasePrice(3.00f);
+			cp.setBasePrice(1.20f);
 			cp.setDynamicPrice(3.00f);
 		
 			cp.setTotalLots(0);
@@ -65,6 +66,16 @@ public class DynamicPriceServiceImpl implements DynamicPriceService {
 
 	}
 
+	
+	
+	public float calculateCost(LocalDateTime start, LocalDateTime end, float price) {
+		
+		
+		
+    return 0.0f;
+	}	
+	
+	
 	@Override
 	public void updateDynamicPrice() {
 		  System.out.println("updateDynamicPrice()");
@@ -95,27 +106,31 @@ public class DynamicPriceServiceImpl implements DynamicPriceService {
 			int available_Lots = Integer.parseInt(carPark_DataList.get(i).getCarpark_info().get(0).getLots_available());
 			System.out.println("TotalLots: " + total_Lots);
 			System.out.println("AvailableLots: " + available_Lots);
-		    float fractionLots = (float)available_Lots/ (float)total_Lots ;
-//		    double fractionLots = Math.round(fraction * 10.0) / 10.0;
+			
+		    float fraction = (float)available_Lots/ (float)total_Lots ;
+		    float fractionLots = (float) Math.round(fraction * 10) / 10;
 		    System.out.println("FractionLots: " + fractionLots);
-			float multiplyer = 1 -  fractionLots;
-//			double multiplyer = Math.round(multiple * 10.0) / 10;
+		    
+			float multiple = (1 -  fractionLots) * 4;
+			float multiplyer = (float) Math.round(multiple * 10) / 10;
 			System.out.println("multiplyer " + multiplyer);
-			float dynamicPrice =((cp.getBasePrice() * multiplyer) + cp.getBasePrice()) ;
-//			double dynamicPrice =Math.round(multiple * 10.0) / 10;
+			
+			float dynamic =((cp.getBasePrice() * multiplyer) + cp.getBasePrice()) ;
+			float dynamicPrice = (float)Math.round(dynamic * 10) / 10;
 			System.out.println("dynamic price: " + dynamicPrice);
 			System.out.println();
+			
 			cp.setTotalLots(total_Lots);
 			cp.setAvailableLots(available_Lots);
 			cp.setDynamicPrice(dynamicPrice);
-//			cp.setBasePrice(3.00f);
+
 			
 			
 			
 	      if ((fractionLots > 0) || (fractionLots <= 1)) 
 		
 	        {
-//	    	   cp.setDynamicPrice(dynamicPrice);
+
 	    	   cp.getDynamicPrice();
 			
 		    }
@@ -123,30 +138,12 @@ public class DynamicPriceServiceImpl implements DynamicPriceService {
 	       else if (fractionLots <= 0 ) 
 	        
 	       {
-//	    	   cp.setDynamicPrice(0.00f);
+
 	    	   cp.getDynamicPrice( );
 			
 	        }
 	      
 			
-//	       else if ((fractionLots > 0.1) || (fractionLots <= 0.3)) 
-//	        
-//	       {
-//	    	   cp.setDynamicPrice(cp.getBasePrice()* multiplyer);
-//	    	   cp.getDynamicPrice();
-//			
-//	        }
-//	       else if ((fractionLots  > 0.3) || (fractionLots <= 0.5))
-//	        {
-//	    	   cp.setDynamicPrice(cp.getBasePrice()* multiplyer);
-//	    	   cp.getDynamicPrice();
-//	         }
-//		   else if ((fractionLots > 0.5) || (fractionLots <= 1)) 
-//		   {
-//			   cp.setDynamicPrice(cp.getBasePrice()* multiplyer);
-//	    	   cp.getDynamicPrice();
-//			
-//		    }
 		 
 			carparkService.saveCarpark(cp);
 	    }
@@ -156,46 +153,4 @@ public class DynamicPriceServiceImpl implements DynamicPriceService {
 
 	
 
-//if (cp.getAvailableLots() / cp.getTotalLots() <= 0) {
-//System.out.println("Parking Lot is Full");
-//System.out.println(cp.getCarparkName());
-//System.out.println(cp.getTotalLots());
-//System.out.println(cp.getAvailableLots());
-//
-//}
-//else if ((cp.getAvailableLots() / cp.getTotalLots() > 0)
-//	|| (cp.getAvailableLots() / cp.getTotalLots() <= 0.1)) 
-//{
-//System.out.println("Parking Fee is $" + (cp.getBasePrice() + 6.00f == cp.getDynamicPrice()));
-//System.out.println(cp.getCarparkName());
-//System.out.println(cp.getDynamicPrice());
-//System.out.println(cp.getTotalLots());
-//System.out.println(cp.getAvailableLots());
-//} 
-//else if ((cp.getAvailableLots() / cp.getTotalLots() > 0.1)
-//	|| (cp.getAvailableLots() / cp.getTotalLots() <= 0.3)) {
-//System.out.println("Parking Fee is $" + (cp.getBasePrice() + 4.00f == cp.getDynamicPrice()));
-//System.out.println(cp.getCarparkName());
-//System.out.println(cp.getDynamicPrice());
-//System.out.println(cp.getTotalLots());
-//System.out.println(cp.getAvailableLots());
-//
-//} 
-//else if ((cp.getAvailableLots() / cp.getTotalLots() > 0.3)
-//	|| (cp.getAvailableLots() / cp.getTotalLots() <= 0.5)) {
-//System.out.println("Parking Fee is $" + (cp.getBasePrice() + 2.00f == cp.getDynamicPrice()));
-//System.out.println(cp.getCarparkName());
-//System.out.println(cp.getDynamicPrice());
-//System.out.println(cp.getTotalLots());
-//System.out.println(cp.getAvailableLots());
-//
-//} 
-//else if ((cp.getAvailableLots() / cp.getTotalLots() > 0.5)
-//	|| (cp.getAvailableLots() / cp.getTotalLots() <= 1)) {
-//System.out.println("Parking Fee is $" + (cp.getBasePrice() == cp.getDynamicPrice()));
-//System.out.println(cp.getCarparkName());
-//System.out.println(cp.getDynamicPrice());
-//System.out.println(cp.getTotalLots());
-//System.out.println(cp.getAvailableLots());
-//
-//}
+
