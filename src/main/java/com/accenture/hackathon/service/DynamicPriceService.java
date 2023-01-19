@@ -2,6 +2,7 @@ package com.accenture.hackathon.service;
 
 
 import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 
 
@@ -17,6 +18,10 @@ public interface DynamicPriceService {
 public void generateCarParks();
 
 public void updateDynamicPrice();
+
+public void scheduleEvent();
+
+public float roundPrice(float price);
 
 public  ArrayList<CarPark_Data>  getDataFromAvailableLotsAPI() throws JsonMappingException, JsonProcessingException ;
 

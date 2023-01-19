@@ -16,7 +16,8 @@ DynamicPriceService dps;
 @GetMapping("/test")
 public String test(){
 //	dps.generateCarParks();
-	dps.updateDynamicPrice();
+//	dps.updateDynamicPrice();
+	dps.scheduleEvent();
 	return "test";
 }
 	
