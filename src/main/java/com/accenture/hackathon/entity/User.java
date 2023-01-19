@@ -54,9 +54,4 @@ public class User {
 	@Column(name="enabled",
 			nullable = false)
 	private Boolean enabled;
-	
-	@OneToOne(
-			mappedBy = "user"
-	)
-	private OngoingParkingEvent ongoingParking;
 }
