@@ -17,9 +17,9 @@ public class StartParking {
 	
 	@NotNull
 	@NotEmpty
-	UUID carparkId;
+	String carparkId;
 	
 	@NotNull
 	@NotEmpty
-	UUID userId;
+	String userId;
 }

@@ -45,7 +45,7 @@ public class ParkingController {
 	public OngoingParkingEvent startParking(@Valid @RequestBody StartParking parkingEvent, 
 										@RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
 		tokenService.validateSession(sessionToken, parkingEvent.getUserId());
-		return parkingService.startParkingEvent(userService.fetchUserById(parkingEvent.getUserId()), carparkService.fetchCarparkbyId(parkingEvent.getCarparkId()));
+		return parkingService.startParkingEvent(userService.fetchUserById(UUID.fromString(parkingEvent.getUserId())), carparkService.fetchCarparkbyId(UUID.fromString(parkingEvent.getCarparkId())));
 	}
 	
 	@GetMapping("/parking/end/{id}")
