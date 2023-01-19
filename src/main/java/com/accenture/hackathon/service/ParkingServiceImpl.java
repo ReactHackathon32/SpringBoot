@@ -11,6 +11,7 @@ import com.accenture.hackathon.entity.Carpark;
 import com.accenture.hackathon.entity.CompletedParkingEvent;
 import com.accenture.hackathon.entity.OngoingParkingEvent;
 import com.accenture.hackathon.entity.User;
+import com.accenture.hackathon.error.GenericDeviationException;
 import com.accenture.hackathon.repository.CompletedParkingRepository;
 import com.accenture.hackathon.repository.OngoingParkingRepository;
 
@@ -26,7 +27,10 @@ public class ParkingServiceImpl implements ParkingService{
 	private CompletedParkingRepository completedParkingRepo;
 
 	@Override
-	public OngoingParkingEvent startParkingEvent(User user, Carpark carpark) {
+	public OngoingParkingEvent startParkingEvent(User user, Carpark carpark) throws GenericDeviationException {
+		if(ongoingParkingRepo.findByUser(user).isPresent()) {
+			throw new GenericDeviationException("user is already parking");
+		}
 		OngoingParkingEvent newParking = OngoingParkingEvent.builder()
 				.user(user)
 				.carpark(carpark)

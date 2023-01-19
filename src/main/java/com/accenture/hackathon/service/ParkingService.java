@@ -6,9 +6,10 @@ import com.accenture.hackathon.entity.Carpark;
 import com.accenture.hackathon.entity.CompletedParkingEvent;
 import com.accenture.hackathon.entity.OngoingParkingEvent;
 import com.accenture.hackathon.entity.User;
+import com.accenture.hackathon.error.GenericDeviationException;
 
 public interface ParkingService {	
-	OngoingParkingEvent startParkingEvent(User user, Carpark carpark);
+	OngoingParkingEvent startParkingEvent(User user, Carpark carpark) throws GenericDeviationException;
 
 	OngoingParkingEvent fetchOngoingParkingEventByUser(User user);
 

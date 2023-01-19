@@ -36,7 +36,7 @@ public class DynamicPriceServiceImpl implements DynamicPriceService {
 			e.printStackTrace();
 		}
 
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 10; i++) {
 			Carpark cp = new Carpark();
 
 			cp.setCarparkName(carPark_DataList.get(i).getCarpark_number());
@@ -93,7 +93,7 @@ public class DynamicPriceServiceImpl implements DynamicPriceService {
 
 
 
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 10; i++) {
 			
 			// set available lots/ set total lots  from carpark data list
 			// from this data cal dynamic price from total lots and set in dynamic price
