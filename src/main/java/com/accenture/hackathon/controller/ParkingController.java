@@ -49,26 +49,26 @@ public class ParkingController {
 	}
 	
 	@GetMapping("/parking/end/{id}")
-	public CompletedParkingEvent stopParking(@PathVariable("id") UUID userId, @RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
-		tokenService.validateSession(sessionToken, userId);
-		User user = userService.fetchUserById(userId);
+	public CompletedParkingEvent stopParking(@PathVariable("id") String userId, @RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
+		tokenService.validateSession(sessionToken, UUID.fromString(userId));
+		User user = userService.fetchUserById(UUID.fromString(userId));
 		
 		return parkingService.stopParkingEvent(user);		
 	}
 	
 	@GetMapping("/parking/current/{id}")
-	public OngoingParkingEvent currentParking(@PathVariable("id") UUID userId, @RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
-		tokenService.validateSession(sessionToken, userId);
-		User user = userService.fetchUserById(userId);
+	public OngoingParkingEvent currentParking(@PathVariable("id") String userId, @RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
+		tokenService.validateSession(sessionToken, UUID.fromString(userId));
+		User user = userService.fetchUserById(UUID.fromString(userId));
 		OngoingParkingEvent ongoingParkingEvent = parkingService.fetchOngoingParkingEventByUser(user);
 		
 		return ongoingParkingEvent;
 	}
 	
 	@GetMapping("/parking/complete/{id}")
-	public List<CompletedParkingEvent> getAllParking(@PathVariable("id") UUID userId, @RequestParam("token") String sessionToken) throws GenericDeviationException {
-		tokenService.validateSession(sessionToken, userId);
-		User user = userService.fetchUserById(userId);
+	public List<CompletedParkingEvent> getAllParking(@PathVariable("id") String userId, @RequestParam("token") String sessionToken) throws GenericDeviationException {
+		tokenService.validateSession(sessionToken, UUID.fromString(userId));
+		User user = userService.fetchUserById(UUID.fromString(userId));
 		
 		return parkingService.getAllParkingEvent(user);
 	}
