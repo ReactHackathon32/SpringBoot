@@ -19,7 +19,6 @@ public class CarparkController {
 	
 	@PostMapping("/carpark")
 	public Carpark saveCarpark(@RequestBody Carpark carpark) {
-		System.out.println("saveUser entered");
 		return carparkService.saveCarpark(carpark);
 	}
 	

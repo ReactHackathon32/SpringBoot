@@ -46,7 +46,6 @@ public class DynamicPriceServiceImpl implements DynamicPriceService {
 			cp.setTotalLots(0);
 			cp.setAvailableLots(0);
 			carparkService.saveCarpark(cp);
-
 		}
 
 	}

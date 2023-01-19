@@ -38,13 +38,13 @@ public class UserController {
 	private TokenService tokenService;
 		
 	@GetMapping("/user/{id}")
-	public User getUserbyId(@PathVariable("id") UUID id, @RequestParam("token") String sessionToken) throws GenericDeviationException {
+	public User getUserById(@PathVariable("id") UUID id, @RequestParam("token") String sessionToken) throws GenericDeviationException {
 		tokenService.validateSession(sessionToken, id);
 		return userService.fetchUserById(id);
 	}
 	
 	@GetMapping("/user/email/{email}")
-	public User getUserbyId(@PathVariable("email") String email, @RequestParam("token") String sessionToken) throws GenericDeviationException {
+	public User getUserByEmail(@PathVariable("email") String email, @RequestParam("token") String sessionToken) throws GenericDeviationException {
 		tokenService.validateSession(sessionToken, email);
 		return userService.fetchUserByEmail(email);
 	}
@@ -76,13 +76,17 @@ public class UserController {
     
     @GetMapping("/resendVerifyToken")
     public GenericResponse resendVerificationToken(@RequestParam("email") String email,
-                                          HttpServletRequest request) {
+                                          HttpServletRequest request) throws GenericDeviationException {
     	User user = userService.fetchUserByEmail(email);
+    	
+    	if(user.getEnabled()) {
+    		throw new GenericDeviationException("user already enabled");
+    	}
     	
     	tokenService.deleteOldVerificationToken(user);
     	tokenService.sendVerificationToken(user, request);
     	
-    	return new GenericResponse("Verification Link Sent");
+    	return new GenericResponse("success");
     }
     
     @GetMapping("/resetPassword")

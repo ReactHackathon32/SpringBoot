@@ -70,6 +70,8 @@ public class TokenServiceImpl implements TokenService {
 		
 	    user.setEnabled(true);
 	    userRepo.save(user);
+	    
+	    verifyTokenRepo.delete(verifyToken);
 	    return true;
 	}
 	
@@ -133,7 +135,7 @@ public class TokenServiceImpl implements TokenService {
 		try {
 			SessionToken sessionToken = sessionTokenRepo.getByToken(token).orElseThrow();
 			
-			if(sessionToken.getUser().getUserId() != id) {
+			if(!sessionToken.getUser().getUserId().equals(id)) {
 				throw new GenericDeviationException();
 			}
 			
