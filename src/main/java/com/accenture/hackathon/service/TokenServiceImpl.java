@@ -120,9 +120,9 @@ public class TokenServiceImpl implements TokenService {
 		
 		emailService.send(
 				user.getEmail(),
-				emailService.buildConfirmationEmail(user.getFirstName() + " " + user.getLastName(),
+				emailService.buildPasswordResetEmail(user.getFirstName() + " " + user.getLastName(),
 				link),
-				"Email Verification");
+				"Password Reset");
 	}
 
 	@Override

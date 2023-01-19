@@ -1,7 +1,5 @@
 package com.accenture.hackathon.dto;
 
-import java.util.UUID;
-
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

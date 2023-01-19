@@ -27,7 +27,6 @@ import com.accenture.hackathon.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
-
 @RestController
 @CrossOrigin(origins="*")
 public class UserController {

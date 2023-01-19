@@ -1,7 +1,6 @@
 package com.accenture.hackathon.entity;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.UUID;
 
 import jakarta.persistence.Column;

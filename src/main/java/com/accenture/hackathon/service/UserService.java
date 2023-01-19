@@ -11,7 +11,6 @@ import com.accenture.hackathon.dto.SavePasswordRequest;
 import com.accenture.hackathon.entity.User;
 import com.accenture.hackathon.error.GenericDeviationException;
 
-import jakarta.validation.Valid;
 
 public interface UserService {
 

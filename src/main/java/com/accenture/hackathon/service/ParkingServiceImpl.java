@@ -25,7 +25,10 @@ public class ParkingServiceImpl implements ParkingService{
 	
 	@Autowired
 	private CompletedParkingRepository completedParkingRepo;
-
+	
+	@Autowired
+	private DynamicPriceService dynamicPriceService;
+	
 	@Override
 	public OngoingParkingEvent startParkingEvent(User user, Carpark carpark) throws GenericDeviationException {
 		if(ongoingParkingRepo.findByUser(user).isPresent()) {
@@ -60,6 +63,10 @@ public class ParkingServiceImpl implements ParkingService{
 		OngoingParkingEvent currentParking = ongoingParkingRepo.findByUser(user).orElseThrow();
 		LocalDateTime nowTime = LocalDateTime.now();
 		float finalPrice = currentParking.getPrice();
+		finalPrice += dynamicPriceService.calculateCost(currentParking.getPricedTime(),
+														nowTime,
+														currentParking.getCarpark().getDynamicPrice());
+		finalPrice = dynamicPriceService.roundPrice(finalPrice);
 		
 		CompletedParkingEvent completedParking = CompletedParkingEvent.builder()
 																		.carpark(currentParking.getCarpark())
@@ -80,5 +87,15 @@ public class ParkingServiceImpl implements ParkingService{
 		return completedParkingRepo.findAllByUser(user);
 	}
 	
+	@Override
+	public OngoingParkingEvent updateParkingFee(OngoingParkingEvent ongoingParking) {
+		LocalDateTime nowTime = LocalDateTime.now();
+		float dynamicPrice = ongoingParking.getCarpark().getDynamicPrice();
+		float parkingAddedCost = dynamicPriceService.calculateCost(ongoingParking.getPricedTime(), nowTime, dynamicPrice);
+		ongoingParking.setPricedTime(nowTime);
+		ongoingParking.setPrice(ongoingParking.getPrice() + parkingAddedCost);
+		
+		return ongoingParking;
+	}
 	
 }

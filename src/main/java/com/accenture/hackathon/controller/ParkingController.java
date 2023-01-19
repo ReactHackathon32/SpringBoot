@@ -20,6 +20,7 @@ import com.accenture.hackathon.entity.OngoingParkingEvent;
 import com.accenture.hackathon.entity.User;
 import com.accenture.hackathon.error.GenericDeviationException;
 import com.accenture.hackathon.service.CarparkService;
+import com.accenture.hackathon.service.DynamicPriceService;
 import com.accenture.hackathon.service.ParkingService;
 import com.accenture.hackathon.service.TokenService;
 import com.accenture.hackathon.service.UserService;
@@ -42,6 +43,9 @@ public class ParkingController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private DynamicPriceService dynamicPriceService;
+	
 	@PostMapping("/parking/start")
 	public OngoingParkingEvent startParking(@Valid @RequestBody StartParking parkingEvent, 
 										@RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
@@ -61,7 +65,12 @@ public class ParkingController {
 	public OngoingParkingEvent currentParking(@PathVariable("id") String userId, @RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
 		tokenService.validateSession(sessionToken, UUID.fromString(userId));
 		User user = userService.fetchUserById(UUID.fromString(userId));
+		
 		OngoingParkingEvent ongoingParkingEvent = parkingService.fetchOngoingParkingEventByUser(user);
+		ongoingParkingEvent = parkingService.updateParkingFee(ongoingParkingEvent);
+
+		float roundedPrice = dynamicPriceService.roundPrice(ongoingParkingEvent.getPrice());
+		ongoingParkingEvent.setPrice(roundedPrice);
 		
 		return ongoingParkingEvent;
 	}

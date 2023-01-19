@@ -16,5 +16,7 @@ public interface ParkingService {
 	CompletedParkingEvent stopParkingEvent(User user);
 
 	List<CompletedParkingEvent> getAllParkingEvent(User user);
+	
+	OngoingParkingEvent updateParkingFee(OngoingParkingEvent ongoingParking);
 
 }

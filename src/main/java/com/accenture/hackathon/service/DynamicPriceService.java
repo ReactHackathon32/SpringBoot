@@ -19,7 +19,7 @@ public void generateCarParks();
 
 public void updateDynamicPrice();
 
-public void scheduleEvent();
+//public void scheduleEvent();
 
 public float roundPrice(float price);
 

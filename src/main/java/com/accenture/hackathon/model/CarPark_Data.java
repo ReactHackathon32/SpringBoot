@@ -2,8 +2,6 @@ package com.accenture.hackathon.model;
 
 import java.util.ArrayList;
 
-import java.util.List;
-
 public class CarPark_Data {
 private ArrayList <CarPark_Info> carpark_info;
 private String carpark_number;
