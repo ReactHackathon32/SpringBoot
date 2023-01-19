@@ -1,5 +1,6 @@
 package com.accenture.hackathon.entity;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
 
@@ -40,9 +41,15 @@ public class CompletedParkingEvent {
 	)
 	private Carpark carpark;
 	
-	@Column(name="start_time")
-	private Date startTime;
+	@Column(name="start_time",
+			nullable = false)
+	private LocalDateTime startTime;
 	
-	@Column(name="end_time")
-	private Date endTime;
+	@Column(name="end_time",
+			nullable = false)
+	private LocalDateTime endTime;
+	
+	@Column(name="price",
+			nullable = false)
+	private float price;
 }

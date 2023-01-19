@@ -26,15 +26,6 @@ import lombok.NoArgsConstructor;
 public class OngoingParkingEvent {
 	
 	@Id
-//	@SequenceGenerator(
-//			name = "parking_sequence",
-//			sequenceName = "parking_sequence",
-//			allocationSize = 10
-//	)
-//	@GeneratedValue(
-//			strategy = GenerationType.SEQUENCE,
-//			generator = "parking_sequence"
-//	)
 	@GeneratedValue(strategy= GenerationType.UUID)
 	@Column(name="parking_id")
 	private UUID parkingId;
@@ -42,6 +33,7 @@ public class OngoingParkingEvent {
 	@OneToOne
 	@JoinColumn(
 			name = "user_id",
+			nullable = false,
 			referencedColumnName = "user_id"
 	)
 	private User user;
@@ -49,16 +41,20 @@ public class OngoingParkingEvent {
 	@ManyToOne()
 	@JoinColumn(
 			name="carpark_id",
+			nullable = false,
 			referencedColumnName = "carpark_id"
 	)
 	private Carpark carpark;
 	
-	@Column(name="start_time")
+	@Column(name="start_time",
+			nullable = false)
 	private LocalDateTime startTime;
 	
-	@Column(name="priced_time")
+	@Column(name="priced_time",
+			nullable = false)
 	private LocalDateTime pricedTime;
 	
-	@Column(name="price")
+	@Column(name="price",
+			nullable = false)
 	private float price;
 }

@@ -1,4 +1,4 @@
-package com.accenture.hackathon.model;
+package com.accenture.hackathon.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -12,13 +12,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserLoginDTO {
-	@NotNull
-	@NotEmpty
-	@Email
-	private String email;
+public class SavePasswordRequest {
 	
 	@NotNull
 	@NotEmpty
-	private String password;
+	String token;
+	
+	@NotNull
+	@NotEmpty
+	String password;
+	
+	@NotNull
+	@NotEmpty
+	String confirmPassword;
 }

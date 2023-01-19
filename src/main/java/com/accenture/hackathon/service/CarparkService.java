@@ -1,7 +1,7 @@
 package com.accenture.hackathon.service;
 
+import java.util.List;
 import java.util.UUID;
-
 
 import com.accenture.hackathon.entity.Carpark;
 
@@ -12,5 +12,7 @@ public interface CarparkService {
 	Carpark saveCarpark(Carpark carpark);
 	
 	Carpark fetchCarparkbyName(String name);
+
+	List<Carpark> fetchAllCarpark();
 
 }
