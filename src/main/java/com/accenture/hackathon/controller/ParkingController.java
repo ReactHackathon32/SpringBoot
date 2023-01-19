@@ -49,7 +49,7 @@ public class ParkingController {
 	}
 	
 	@GetMapping("/parking/end/{id}")
-	public CompletedParkingEvent stopParking(@PathVariable("") UUID userId, @RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
+	public CompletedParkingEvent stopParking(@PathVariable("id") UUID userId, @RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
 		tokenService.validateSession(sessionToken, userId);
 		User user = userService.fetchUserById(userId);
 		
@@ -57,7 +57,7 @@ public class ParkingController {
 	}
 	
 	@GetMapping("/parking/current/{id}")
-	public OngoingParkingEvent currentParking(@PathVariable("") UUID userId, @RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
+	public OngoingParkingEvent currentParking(@PathVariable("id") UUID userId, @RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
 		tokenService.validateSession(sessionToken, userId);
 		User user = userService.fetchUserById(userId);
 		OngoingParkingEvent ongoingParkingEvent = parkingService.fetchOngoingParkingEventByUser(user);
@@ -66,7 +66,7 @@ public class ParkingController {
 	}
 	
 	@GetMapping("/parking/complete/{id}")
-	public List<CompletedParkingEvent> getAllParking(@PathVariable("") UUID userId, @RequestParam("token") String sessionToken) throws GenericDeviationException {
+	public List<CompletedParkingEvent> getAllParking(@PathVariable("id") UUID userId, @RequestParam("token") String sessionToken) throws GenericDeviationException {
 		tokenService.validateSession(sessionToken, userId);
 		User user = userService.fetchUserById(userId);
 		
