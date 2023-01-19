@@ -1,36 +1,4 @@
 spring:
-  mail:
-    properties:
-      mail:
-        smtp:
-          starttls:
-            enable: 'true'
-          auth: 'true'
-    host: smtp.gmail.com
-    username: zawadfarhan@gmail.com
-    password: lieifhusgzovtuzx
-    port: '587'
-  security:
-    user:
-      name: username
-      password: password
-  profiles:
-    active: prod
-  jpa:
-    hibernate:
-      ddl-auto: update
-
----
-
-spring:
-  datasource:
-    maxActive: '5'
-    driver-class-name: org.postgresql.Driver
-    username: uevjeixl
-    url: jdbc:postgresql://topsy.db.elephantsql.com:5432/uevjeixl
-    testWhileIdle: 'true'
-    validationQuery: SELECT 1
-    password: MnoistEkQexL8kIQ4YPcP4xmJ7tCG2H_
   jpa:
     properties:
       hibernate:
@@ -38,19 +6,28 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: 'true'
-  profiles: prod
-
----
-
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    url: jdbc:mysql://localhost:3306/hackathon
-    password: root
-  jpa:
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    username: zawadfarhan@gmail.com
+    port: '587'
     properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
-    show-sql: 'true'
-  profiles: dev
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    password: lieifhusgzovtuzx
+  datasource:
+    testWhileIdle: 'true'
+    password: MnoistEkQexL8kIQ4YPcP4xmJ7tCG2H_
+    maxActive: '5'
+    driver-class-name: org.postgresql.Driver
+    username: uevjeixl
+    url: jdbc:postgresql://topsy.db.elephantsql.com:5432/uevjeixl
+    validationQuery: SELECT 1
+  security:
+    user:
+      password: password
+      name: username
