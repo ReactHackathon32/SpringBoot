@@ -75,8 +75,8 @@ public class UserController {
         return new GenericResponse("failed");
     }
     
-    @GetMapping("/resendVerifyToken")
-    public GenericResponse resendVerificationToken(@RequestParam("email") String email,
+    @PostMapping("/resendVerifyToken/{email}")
+    public GenericResponse resendVerificationToken(@PathVariable("email") String email,
                                           HttpServletRequest request) throws GenericDeviationException {
     	User user = userService.fetchUserByEmail(email);
     	
@@ -90,7 +90,7 @@ public class UserController {
     	return new GenericResponse("success");
     }
     
-    @GetMapping("/resetPassword")
+    @PostMapping("/resetPassword")
     public GenericResponse resetPassword(@RequestBody @Valid ResetRequest resetDetails) {
     	User user = userService.fetchUserByEmail(resetDetails.getEmail());
     	tokenService.sendResetToken(user, resetDetails.getUrl());

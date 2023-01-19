@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.accenture.hackathon.dto.StartParking;
+import com.accenture.hackathon.entity.Carpark;
 import com.accenture.hackathon.entity.CompletedParkingEvent;
 import com.accenture.hackathon.entity.OngoingParkingEvent;
 import com.accenture.hackathon.entity.User;
@@ -48,7 +49,7 @@ public class ParkingController {
 		return parkingService.startParkingEvent(userService.fetchUserById(UUID.fromString(parkingEvent.getUserId())), carparkService.fetchCarparkbyId(UUID.fromString(parkingEvent.getCarparkId())));
 	}
 	
-	@GetMapping("/parking/end/{id}")
+	@PostMapping("/parking/end/{id}")
 	public CompletedParkingEvent stopParking(@PathVariable("id") String userId, @RequestParam("token") String sessionToken) throws GenericDeviationException, NoSuchElementException {
 		tokenService.validateSession(sessionToken, UUID.fromString(userId));
 		User user = userService.fetchUserById(UUID.fromString(userId));
@@ -73,4 +74,8 @@ public class ParkingController {
 		return parkingService.getAllParkingEvent(user);
 	}
 	
+	@GetMapping("/carpark")
+	public List<Carpark> getAllCarpark() {
+		return carparkService.fetchAllCarpark();
+	}
 }
