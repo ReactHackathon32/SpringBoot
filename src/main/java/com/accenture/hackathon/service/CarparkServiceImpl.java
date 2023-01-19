@@ -1,5 +1,6 @@
 package com.accenture.hackathon.service;
 
+import java.util.List;
 import java.util.UUID;
 
 
@@ -28,6 +29,11 @@ public class CarparkServiceImpl implements CarparkService{
 	@Override
 	public Carpark fetchCarparkbyName(String name) {
 		return carparkRepo.findByCarparkName(name);
+	}
+
+	@Override
+	public List<Carpark> fetchAllCarpark() {
+		return carparkRepo.findAll();
 	}
 
 }

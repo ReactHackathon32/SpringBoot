@@ -1,16 +1,4 @@
-package com.accenture.hackathon.model;
-
-
-import java.util.UUID;
-
-
-
-import com.accenture.hackathon.entity.OngoingParkingEvent;
-import com.accenture.hackathon.entity.User;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonProperty.Access;
-
-
+package com.accenture.hackathon.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -24,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserRegistrationDTO {
+public class RegistrationRequest {
 	
 	@NotNull
 	@NotEmpty

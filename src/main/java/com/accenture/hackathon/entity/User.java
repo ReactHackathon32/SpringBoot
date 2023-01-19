@@ -23,13 +23,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(
-		name="tbl_user",
-		uniqueConstraints = @UniqueConstraint(
-				name = "email_unique",
-				columnNames = "email"
-		)
-)
+@Table(name="tbl_user")
 public class User {
 	
 	@Id
@@ -41,20 +35,24 @@ public class User {
 			name="email",
 			nullable = false
 	)
-	
 	private String email;
 	
 	@JsonProperty(access = Access.WRITE_ONLY)
-	@Column(name="password", length=60)
+	@Column(name="password",
+			length=60,
+			nullable = false)
 	private String password;
 	
-	@Column(name="first_name")
+	@Column(name="first_name",
+			nullable = false)
 	private String firstName;
 	
-	@Column(name="last_name")
+	@Column(name="last_name",
+			nullable = false)
 	private String lastName;
 	
-	@Column(name="enabled")
+	@Column(name="enabled",
+			nullable = false)
 	private Boolean enabled;
 	
 	@OneToOne(

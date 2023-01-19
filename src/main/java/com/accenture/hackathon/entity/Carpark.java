@@ -24,18 +24,18 @@ public class Carpark {
 	@Column(name="carpark_id")
 	private UUID carparkId;
 	
-	@Column(name="carpark_name")
+	@Column(name="carpark_name", nullable = false)
 	private String carparkName;
 	
-	@Column(name="base_price")
+	@Column(name="base_price", nullable = false)
 	private float basePrice;
 	
-	@Column(name="dynamic_price")
+	@Column(name="dynamic_price", nullable = false)
 	private float dynamicPrice;
 	
-	@Column(name="total_lots")
+	@Column(name="total_lots", nullable = false)
 	private int totalLots;
 	
-	@Column(name="available_lots")
+	@Column(name="available_lots", nullable = false)
 	private int availableLots;
 }
