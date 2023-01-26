@@ -1,0 +1,33 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: 'true'
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    username: ${PROD_EMAIL_USERNAME}
+    port: '587'
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    password: ${PROD_EMAIL_PASSWORD}
+  datasource:
+    testWhileIdle: 'true'
+    password: ${PROD_DB_PASSWORD}
+    maxActive: '5'
+    driver-class-name: org.postgresql.Driver
+    username: ${PROD_DB_USERNAME}
+    url: jdbc:postgresql://${PROD_DB_HOST}:${PROD_DB_PORT}/${PROD_DB_NAME}
+    validationQuery: SELECT 1
+  security:
+    user:
+      password: ${PROD_SECURITY_PASSWORD}
+      name: ${PROD_SECURITY_USERNAME}

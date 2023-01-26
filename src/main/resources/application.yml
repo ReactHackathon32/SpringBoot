@@ -10,7 +10,7 @@ spring:
       ddl-auto: update
   mail:
     host: smtp.gmail.com
-    username: zawadfarhan@gmail.com
+    username: ${PROD_EMAIL_USERNAME}
     port: '587'
     properties:
       mail:
@@ -18,16 +18,16 @@ spring:
           starttls:
             enable: 'true'
           auth: 'true'
-    password: lieifhusgzovtuzx
+    password: ${PROD_EMAIL_PASSWORD}
   datasource:
     testWhileIdle: 'true'
-    password: MnoistEkQexL8kIQ4YPcP4xmJ7tCG2H_
+    password: ${PROD_DB_PASSWORD}
     maxActive: '5'
     driver-class-name: org.postgresql.Driver
-    username: uevjeixl
-    url: jdbc:postgresql://topsy.db.elephantsql.com:5432/uevjeixl
+    username: ${PROD_DB_USERNAME}
+    url: jdbc:postgresql://${PROD_DB_HOST}:${PROD_DB_PORT}/${PROD_DB_NAME}
     validationQuery: SELECT 1
   security:
     user:
-      password: password
-      name: username
+      password: ${PROD_SECURITY_PASSWORD}
+      name: ${PROD_SECURITY_USERNAME}
